@@ -15,8 +15,11 @@ public class StudentServiceImplementation implements StudentService {
 
     @Override
     public Student saveStudent(Student student) {
-        studentRepository.save(student);
-        return student;
+        if (!studentRepository.findIfExists(student.getName())) {
+            studentRepository.save(student);
+            return student;
+        }
+        return null;
     }
 
     @Override
