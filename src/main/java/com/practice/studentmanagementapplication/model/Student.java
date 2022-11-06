@@ -31,7 +31,6 @@ public class Student {
      * @return String return the name
      */
     public String getName() {
-        System.out.println("Name is======>" + name);
         return name;
     }
 
